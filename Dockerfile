@@ -78,8 +78,8 @@ RUN find /var/www/html -type d -exec chmod 2777 {} \; \
 # Cambiar al usuario "user" para la ejecución final
 USER user
 
-# Exponer el puerto 3000
-EXPOSE 3000
+# Exponer el puerto 8000
+EXPOSE 8000
 
 # Ejecutar Apache en primer plano
 CMD ["apachectl", "-D", "FOREGROUND"]
