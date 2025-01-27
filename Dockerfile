@@ -27,7 +27,7 @@ RUN useradd -m -u 1000 user
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 # Cambiar el puerto de Apache a 8000
-RUN sed -i 's/Listen 80/Listen 8000/g' /etc/apache2/ports.conf
+RUN sed -i 's/Listen 80/Listen 80/g' /etc/apache2/ports.conf
 
 # Cambiar al usuario "user"
 USER user
@@ -78,8 +78,8 @@ RUN find /var/www/html -type d -exec chmod 2777 {} \; \
 # Cambiar al usuario "user" para la ejecución final
 USER user
 
-# Exponer el puerto 8000
-EXPOSE 8000
+# Exponer el puerto 80
+EXPOSE 80
 
 # Ejecutar Apache en primer plano
 CMD ["apachectl", "-D", "FOREGROUND"]
